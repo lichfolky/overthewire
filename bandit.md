@@ -250,4 +250,37 @@ fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
 Correct!
 jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
 ```
-## 15
+## LV 15
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+
+Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
+
+`openssl s_client -connect localhost:30001`
+...
+    0060 - 2c 4c 9b b4 09 07 eb 78-e4 90 88 1d 32 1c f0 af   ,L.....x....2...
+    0070 - 38 d5 66 65 66 17 b5 0a-cf dc be 79 4c 74 f3 2e   8.fef......yLt..
+    0080 - 1f 7d 38 12 13 43 2d 04-48 63 d5 e7 d7 fd 95 17   .}8..C-.Hc......
+    0090 - c8 eb 1f 1c ef 93 eb c1-89 2b 5f b8 83 26 3e b8   .........+_..&>.
+    00a0 - 60 14 a0 95 13 05 ff 5e-34 2e 26 62 65 48 cc 5d   `......^4.&beH.]
+    00b0 - aa 12 ef ce c4 81 4c de-46 ed 33 2d 1c 8a 2c c5   ......L.F.3-..,.
+    00c0 - f9 65 0e e6 84 1c 85 d6-8f c5 61 3b 80 c9 a8 ba   .e........a;....
+
+    Start Time: 1668214060
+    Timeout   : 7200 (sec)
+    Verify return code: 10 (certificate has expired)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+Correct!
+JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+
+## Lv 17
+
+The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
+
+ssh, telnet, nc, openssl, s_client, nmap
+
